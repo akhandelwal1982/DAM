@@ -17,7 +17,7 @@ clean_text_tokenizer <- function(text){
   temp  =  gsub("\\d", "", temp)                           
   temp =  stripWhitespace(temp)
   temp  =  gsub("^\\s+|\\s+$", "", temp)          
-  temp <- data_frame(document = 1:120, text = temp)
+  temp <- data_frame(document = 1:length(text), text = temp)
   temp <- temp %>% unnest_tokens(word, text)
   my_stop_words <- c("phone","samsung", "phones", "ii") # my stop words defined
   custom_stop_words <- bind_rows(data_frame(word = my_stop_words, 
