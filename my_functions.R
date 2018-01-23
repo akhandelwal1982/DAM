@@ -64,9 +64,9 @@ clean_text_tokenizer <- function(text){
 
 
 # Function 3A word cloud creator
-word_cloud_creator = function(dtm_temp){    
+word_cloud_creator = function(dtm_matrix){    
   if (!require(wordcloud)) {install.packages("wordcloud")}
-  dtm = as.matrix(dtm_temp)  
+  dtm = as.matrix(dtm_matrix)  
   dtm_colsum = apply(dtm, 2, sum)  
   min_word = min(50, length(dtm_colsum))   
   words = colnames(dtm)[1:min_word] 
