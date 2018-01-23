@@ -36,7 +36,7 @@ clean_text_tokenizer <- function(text){
    if (!require(tm)) {install.packages("tm")}
    temp <- cleaned_text %>% count(document, word, sort = TRUE) %>%
    ungroup()
- # creating DTM 
+ # creating DTM
  dtm_temp <- temp %>%
   cast_sparse(document, word, n)
  return(dtm_temp) } # DTM function ends 
