@@ -99,7 +99,7 @@ cog_creator <- function(dtm_matrix) { # function starts
   V(graph)$degree <- degree(graph) # setting degrees of vertices
   graph = delete.vertices(graph, V(graph)[ degree(graph) == 0 ]) # Deleting lone wolfs 
   set.seed(101) # set seed to make the layout reproducible
-  plot(g, layout=layout.kamada.kawai) # Plotting graph
+  plot(graph, layout=layout.kamada.kawai) # Plotting graph
 } # Cog_cretaor ends 
 
 
