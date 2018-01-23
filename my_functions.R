@@ -106,7 +106,7 @@ cog_creator <- function(dtm_matrix) { # function starts
 # function 3c - barplot_creator
 barplot_creator <- function(dtm_matrix){
   freq <- colSums(as.matrix(dtm_matrix))
-  barplot(sort(freq))
+  barplot(sort(freq), decreasing=T)
           } # function barplot_cretaor ends
 
 # Function 3 - Function that creates word-cloud, COG, and Bar-plot 
