@@ -1,5 +1,7 @@
 Clean_Text <- function(x){   # x = a text doc
-   require("tm")    # always invoke required libraries
+  if (!require(tidytext)) {install.packages("tidytext")}
+  if (!require(dplyr)) {install.packages("dplyr")}
+  if (!require(tm)) {install.packages("tm")}
   
   x  =  gsub("<.*?>", " ", x)               # regex for removing HTML tags
   x  =  iconv(x, "latin1", "ASCII", sub="") # Keep only ASCII characters
@@ -23,6 +25,7 @@ emotion_func <- function(text){
   if (!require(dplyr)) {install.packages("dplyr")}
   if (!require(tm)) {install.packages("tm")}
   if (!require(syuzhet)) {install.packages("syuzhet")}
+  if (!require(ggplot2)) {install.packages("ggplot")}
 emotions <- text %>% Clean_Text() %>% get_nrc_sentiment()%>% 
             mutate(review_number = row_number(), polar = positive - negative)
 return(emotions)}
