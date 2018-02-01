@@ -22,7 +22,7 @@ return(cluster_data)
 
 
 # function for Hieararchical clustering
-clustering_hier < - function(data, num){
+clustering_hier <- function(data, num){
   d <- dist(data, method = "euclidean") # distance matrix
 fit <- hclust(d, method = "ward.D") 
 
