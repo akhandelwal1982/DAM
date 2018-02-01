@@ -14,7 +14,7 @@ Clean_Text <- function(x){   # x = a text doc
   
   x  =  removeWords(x,stopwords)            # removing stopwords created above
   x  =  stripWhitespace(x)                  # removing white space
-  #  x  =  stemDocument(x)                   # can stem doc if needed. Will need Snowball libraries if so.
+ 
   
   return(x) }
 
