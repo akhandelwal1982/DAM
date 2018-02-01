@@ -1,7 +1,7 @@
 
 cluster_kmeans <- function(data,num){
 set.seed(101)   # set seed for reproducible work
-wss <- (nrow(data)-1)*sum(apply(mydata,2,var))  # wss is within group sum of squares
+wss <- (nrow(data)-1)*sum(apply(data,2,var))  # wss is within group sum of squares
 
 for (i in 2:15) wss[i] <- sum(# checking model fit for 2 to 15 clusters
   kmeans(data,  centers = i)$withinss)  # note use of kmeans() func
