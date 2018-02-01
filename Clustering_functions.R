@@ -10,7 +10,7 @@ plot(1:num, wss, type="b",
      xlab="Number of Clusters",
      ylab="Within groups sum of squares")
 
-fit <- kmeans(mydata, num)
+fit <- kmeans(data, num)
 
 aggregate(data, by = list(fit$cluster), FUN = mean)
 
